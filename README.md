@@ -38,8 +38,7 @@ class KalmanFi1ter:
         self.x=self.x+np.dot(K,y)
         self.P=np.dot(np.eye(self.F.shape[0])-np.dot(K,self.H),self.P)
 dt=0.1
-```
-```
+
 F=np.array([[1,dt],[0,1]])
 H=np.array([[1,0]])
 Q=np.diag([0.1,0.1])
@@ -53,6 +52,8 @@ for i in range(100):
     truestates.append([i*dt,1])
     measurements.append(i*dt+np.random.normal(scale=1))
 est_states=[]
+```
+```
 for z in measurements:
     kf.predict()
     kf.update(np.array([z]))
