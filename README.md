@@ -38,6 +38,8 @@ class KalmanFi1ter:
         self.x=self.x+np.dot(K,y)
         self.P=np.dot(np.eye(self.F.shape[0])-np.dot(K,self.H),self.P)
 dt=0.1
+```
+```
 F=np.array([[1,dt],[0,1]])
 H=np.array([[1,0]])
 Q=np.diag([0.1,0.1])
